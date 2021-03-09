@@ -201,8 +201,6 @@ public class LocationActivity extends BaseActivity {
                 } finally {
                     urlConnection.disconnect();
                 }
-
-
             } catch (Exception e) {
                 e.printStackTrace();
             }
