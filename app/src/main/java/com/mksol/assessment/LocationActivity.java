@@ -12,6 +12,8 @@ import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
@@ -32,6 +34,7 @@ public class LocationActivity extends BaseActivity {
 
     LocationManager locationManager;
     Location location;
+    ProgressBar progress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +42,8 @@ public class LocationActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         mContext = this;
         mActivity = this;
+
+        progress = (ProgressBar) findViewById(R.id.progress);
 
         locationManager = (LocationManager) mContext.getSystemService(Context.LOCATION_SERVICE);
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -186,11 +191,8 @@ public class LocationActivity extends BaseActivity {
                                 TextView textViewDegSpeedVal = (TextView) findViewById(R.id.textViewWindDegVal);
                                 textViewDegSpeedVal.setText(deg);
 
-                                hideProgressDialog();
-
                             } catch (JSONException e) {
                                 e.printStackTrace();
-                                hideProgressDialog();
                             }
                         }
                     });
@@ -199,8 +201,6 @@ public class LocationActivity extends BaseActivity {
                 } finally {
                     urlConnection.disconnect();
                 }
-
-
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -209,6 +209,16 @@ public class LocationActivity extends BaseActivity {
 
         @Override
         protected void onPostExecute(String result) {
+            progress.setVisibility(View.INVISIBLE);
+        }
+
+        @Override
+        protected void onPreExecute() {
+            progress.setVisibility(View.VISIBLE);
+            try {
+                Thread.sleep(500);
+            } catch (Exception e) {
+            }
         }
     }
 
@@ -219,14 +229,10 @@ public class LocationActivity extends BaseActivity {
             if (location == null)
                 showAlertDialogError("Unable to get GPS co-ordinates", "Error");
             else {
-                showProgressDialog(mContext, "Loading weather...");
-
                 new LongOperation().execute();
-                hideProgressDialog();
             }
         } catch (Exception e) {
             e.printStackTrace();
-            hideProgressDialog();
             if (location == null)
                 showAlertDialogError("Unable to get GPS co-ordinates", "Error");
         }

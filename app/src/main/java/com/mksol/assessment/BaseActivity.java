@@ -77,36 +77,5 @@ public class BaseActivity extends AppCompatActivity {
                 .show();
     }
 
-    protected void showProgressDialog(Context context, String message) {
-        if (progressDialog != null && progressDialog.isShowing()) {
-            return;
-        }
-
-        LayoutInflater li = LayoutInflater.from(this);
-        View myView = li.inflate(R.layout.layout_loading_dialog, null);
-
-        builder = new AlertDialog.Builder(context, R.style.AppThemeRainProgress_Dark_Dialog);
-        builder.setCancelable(false);
-
-        builder.setView(myView);
-
-        TextView txt = (TextView) myView.findViewById((R.id.textMessage));
-        txt.setText(message);
-
-        ProgressBar prog = (ProgressBar) myView.findViewById(R.id.progress);
-
-        progressDialog = builder.create();
-
-        progressDialog.show();
-    }
-
-    protected void hideProgressDialog() {
-        if (progressDialog == null) {
-            return;
-        }
-
-        progressDialog.dismiss();
-    }
-
 }
 
