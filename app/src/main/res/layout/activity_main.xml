@@ -203,6 +203,10 @@
         android:layout_height="50dp"
         android:layout_centerInParent="true"
         android:visibility="invisible">
+<<<<<<< HEAD
+=======
+
+>>>>>>> b4ac0e29f6ad9ec7e4e6e1807f346ea2156386ce
     </ProgressBar>
 
 
