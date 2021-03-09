@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="launcher_background">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="colorPrimary">#0077c6</color>
+    <color name="colorPrimaryDark">#064a76</color>
+    <color name="rain_blue">#0077c6</color>
+    <color name="colorAccent">#0077c6</color>
+    <color name="hintTextAppearance">#FF4081</color>
+    <color name="errorTextAppearance">#c20847</color>
+    <color name="input_border_gray">#FFB3B3B3</color>
+    <color name="input_border_info">#a6c5d9</color>
+    <color name="input_field_dark">#f4f4f4</color>
+    <color name="input_field_info">#f1f9ff</color>
+    <color name="faq_closed">#f4f4f4</color>
+    <color name="faq_open">#23a0ee</color>
+    <color name="grayish">#676767</color>
+    <color name="babyblue">#DFF2FF</color>
+    <color name="rain_grey">#bbbcbc</color>
+    <color name="rain_lite_grey">#eeeeee</color>
+    <color name="warmGray">#707070</color>
+    <color name="menu_bg">#0283cf</color>
+    <color name="bottom_nav_bg">#f1f1f1</color>
+    <color name="ic_launcher_background">#FFFFFF</color>
+
+    <color name="contents_text">#ff000000</color>
+    <color name="encode_view">#ffffffff</color>
+    <color name="possible_result_points">#c0ffbd21</color>
+    <!-- Android standard ICS color -->
+    <color name="result_minor_text">#ffc0c0c0</color>
+    <color name="result_points">#c099cc00</color>
+    <!-- Android standard ICS color -->
+    <color name="result_text">#ffffffff</color>
+    <color name="result_view">#b0000000</color>
+    <color name="status_text">#ffffffff</color>
+    <color name="transparent">#00000000</color>
+    <color name="viewfinder_laser">#ffcc0000</color>
+    <!-- Android standard ICS color -->
+    <color name="viewfinder_mask">#60000000</color>
+
+    <color name="checkout_color_accent">@color/colorAccent</color>
+    <color name="checkout_section_background_color_light">#e3f2fd</color>
+
+
+
+</resources>
