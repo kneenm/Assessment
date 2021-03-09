@@ -221,7 +221,6 @@ public class LocationActivity extends BaseActivity {
                 Thread.sleep(500);
             } catch (Exception e) {
            }
-
         }
     }
 
